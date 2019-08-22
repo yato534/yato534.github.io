@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo和git on 逛街晚餐 薄雾客栈</title>
+    <link>https://yato534.github.io/categories/hugo%E5%92%8Cgit/</link>
+    <description>Recent content in hugo和git on 逛街晚餐 薄雾客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Aug 2019 22:17:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://yato534.github.io/categories/hugo%E5%92%8Cgit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hugo和Git命令</title>
+      <link>https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 16 Aug 2019 22:17:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

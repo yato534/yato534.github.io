@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 逛街晚餐 薄雾客栈</title>
+    <link>https://yato534.github.io/post/</link>
+    <description>Recent content in Posts on 逛街晚餐 薄雾客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Aug 2019 13:09:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://yato534.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43;指针和引用</title>
+      <link>https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Thu, 22 Aug 2019 13:09:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</guid>
+      <description>&lt;p&gt;　　关于C++指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo和Git命令</title>
+      <link>https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 16 Aug 2019 22:17:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>乍处之欢不如久处不厌</title>
+      <link>https://yato534.github.io/2019/08/%E4%B9%8D%E5%A4%84%E4%B9%8B%E6%AC%A2%E4%B8%8D%E5%A6%82%E4%B9%85%E5%A4%84%E4%B8%8D%E5%8E%8C/</link>
+      <pubDate>Fri, 16 Aug 2019 18:33:59 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/%E4%B9%8D%E5%A4%84%E4%B9%8B%E6%AC%A2%E4%B8%8D%E5%A6%82%E4%B9%85%E5%A4%84%E4%B8%8D%E5%8E%8C/</guid>
+      <description>&lt;p&gt;乍处之欢不如久处不厌，久处之厌莫若只如初见&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

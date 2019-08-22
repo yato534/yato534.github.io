@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.0 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="YaTo">
+<meta name="keywords" content="使用hugo&#43;git, C&#43;&#43;, 日常, 数据结构, 算法">
+<meta name="description" content="　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·">
+
+
+<meta property="og:description" content="　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hugo和Git命令">
+<meta name="twitter:title" content="hugo和Git命令">
+<meta property="og:url" content="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/">
+<meta property="twitter:url" content="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/">
+<meta property="og:site_name" content="逛街晚餐 薄雾客栈">
+<meta property="og:description" content="　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·">
+<meta name="twitter:description" content="　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-08-16T22:17:47">
+  
+  
+    <meta property="article:modified_time" content="2019-08-16T22:17:47">
+  
+  
+  
+    
+      <meta property="article:section" content="技术小白">
+    
+      <meta property="article:section" content="hugo和git">
+    
+  
+  
+    
+      <meta property="article:tag" content="hugo">
+    
+      <meta property="article:tag" content="git">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/git.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/git.jpg">
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/Siman.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/Siman.jpg">
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/yato.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/yato.jpg">
+
+
+    <title>hugo和Git命令</title>
+
+    <link rel="icon" href="https://yato534.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://yato534.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://yato534.github.io/">逛街晚餐 薄雾客栈</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://yato534.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://yato534.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">YaTo</h4>
+        
+          <h5 class="sidebar-profile-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/yato534" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/images/Siman.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      hugo和Git命令
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-08-16T22:17:47&#43;08:00">
+        
+  八月 16, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%8a%80%e6%9c%af%e5%b0%8f%e7%99%bd">技术小白</a>, 
+    
+      <a class="category-link" href="https://yato534.github.io/categories/hugo%e5%92%8cgit">hugo和git</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>　　记录一下，忙活了两天，这才算自己的第一份博客吧。之前没有接触过hugo,也没有用过git命令，所以着手搭建属于自己的一个博客的过程中可谓坎坷，总是会出现一些莫名其妙的ERROR，简直让人抓狂。最后还是耐着性子和请教大佬慢慢的解决· · ·</p>
+
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#下载hugo和git">下载Hugo和Git</a></li>
+<li><a href="#下载主题并设置主题">下载主题并设置主题</a></li>
+<li><a href="#写一篇文章">写一篇文章</a></li>
+<li><a href="#本地启动博客">本地启动博客</a></li>
+<li><a href="#部署到远程服务器github">部署到远程服务器github</a></li>
+<li><a href="#总结与git命令">总结与git命令</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>　　这一篇博客就简单介绍一下自己从开始有这个念头到成功搭建所用的命令和方法，最后再汇总一下常用的git命令，也算是方便以后自己查阅。</p>
+
+<h2 id="下载hugo和git">下载Hugo和Git</h2>
+
+<p>　　1.作为windows用户，首先在hugo的github官网：<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a> 上下载Windows版本的的hugo安装包，
+<img src="https://yato534.github.io/images/hugo.jpg" alt="hugu" /><br />
+　　下载好之后，解压缩（可以自己选择文件路径，不要带有中文），之后便将hugo添加到<a href="https://jingyan.baidu.com/article/00a07f3876cd0582d128dc55.html">windows环境变量</a>中，添加好之后使用win+R打开运行窗口输出cmd,打开命令行，输入:hugo versin,提示版本号如:
+<code>Hugo Static Site Generator v0.57.0-9B00E647 windows/amd64 BuildDate: 2019-08-14T08:05:40Z</code><br />
+说明hugo已经配置好了。Git的下载安装直接进入<a href="https://git-scm.com/">Git官网</a>点击右侧download，然后会自动弹出下载框，按照提示安装即可。
+##生成hugo博客
+　　2.配置好之后首先要用hugo生成一个blog根目录，在命令行窗口下输入命令即可。<code>hugo new site myblog</code></p>
+
+<h2 id="下载主题并设置主题">下载主题并设置主题</h2>
+
+<p>&#160;&#160;&#160;&#160;3.现在就需要下载一个主题，可以在<a href="https://themes.gohugo.io/">hugo主题官网</a>上挑选喜欢的主题，挑选完主题之后，在命令行根目录下（也就是myblog目录），输入命令(这里以我的主题为例)，等待下载好之后便成功设置好主题。<br />
+<code>git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git</code></p>
+
+<h2 id="写一篇文章">写一篇文章</h2>
+
+<p>　　4.首先，在根目录下使用命令：<code>hugo new post/firstbolg.md</code>，这样就可以在myblog的content文件下生成一个post文件夹，以后写文章都是存在这个文件里，里面就有我们刚生成的firstblog文件。接着我们可以使用VScode编译器打开firstblog文件，便可以在里面编辑我们的文章。</p>
+
+<h2 id="本地启动博客">本地启动博客</h2>
+
+<p>　　5.接着就可以在本地启动博客，查看自己之前下载的主题和自己写的文章，在根目录下使用命令：<code>huto server -t huto-tranquilpeak-theme --buildDrafts</code>，之后便会生成一个本地目录<img src="https://yato534.github.io/images/bendimulu.jpg" alt="本地目录" />，在浏览器中输入这个地址便可以在本地启动博客。</p>
+
+<h2 id="部署到远程服务器github">部署到远程服务器github</h2>
+
+<p>　　6.首先创建一个github账号，然后点击头像，然后点击new projiects,然后在Repositories中点击右侧New,然后起一个仓库名，XXXX就是前面Owner中的名字。<img src="https://yato534.github.io/images/github.jpg" alt="cangkuming" />起好之后使用命令部署(XXXX就是之前起的名字)<code>hugo --themes=hugo-tranquilpeak-theme --baseUrl=&quot;https//github.com/XXXX/XXXX.github.io/&quot; --buildDrafts</code>执行完命令之后就会在根目录下出现一个public文件夹，使用<code>cd public</code>命令进入public文件夹，然后使用命令<code>git init</code>创建本地仓库，然后再使用命令<code>git add .</code>把public中所有文件加进去，接着写一个提交信息<code>git commit -m &quot;XXXX&quot;</code>(XXXX为自己随便写)，然后跟远端仓库关联，使用命令<code>git remote add origin https://github.com/XXXX/XXXX.github.io.git</code>(XXXX和之前一样)，最后使用命令把文件push到远程仓库<code>git push -u origin master</code>这样便成功把博客部署到远程git仓库，之后便可在浏览器输入XXXX.github.io访问自己的博客。</p>
+
+<h2 id="总结与git命令">总结与git命令</h2>
+
+<p>　　7.总的来说，说的还是比较概括，其中注册github账号后创建SSH Key和和填写公钥的过程也没有讲，其实只有动手之后才发现自己的不足，之前完全没有了解过git命令，所以实际操作起来后遇到了很多问题，在此，总结一下自己用到的各种命令：
+<code>cd: 改变目录 #cd myblog 就是改变目录进入到myblog</code><br />
+<code>cd .. 回退到上一个目录 #cd和..中间有空格</code><br />
+<code>mkdir myblog 创建一个myblog文件夹</code><br />
+<code>vi myblog 编辑文件myblog</code>
+<code>:wq 推出编辑，返回命令行</code><br />
+<code>git init 创建本地仓库</code><br />
+<code>git add . 添加所有文件到本地仓库</code><br />
+<code>git commit -m&quot;xxx&quot; 提交一个仓库信息</code><br />
+<code>git remote add origin https://github.com/xxx/xxx.github.io/.git 跟远程仓库关联</code><br />
+<code>git pull origin master 从远程拉取master分支与本地合并</code>
+<code>git push -u origin master  从本地提交到远程master分支</code></p>
+
+<p>最后关于markdown基本语法的使用参考了简书大佬的方法，贴一下地址：<a href="https://www.jianshu.com/p/191d1e21f7ed">简书</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/hugo/">hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/git/">git</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/%E4%B9%8D%E5%A4%84%E4%B9%8B%E6%AC%A2%E4%B8%8D%E5%A6%82%E4%B9%85%E5%A4%84%E4%B8%8D%E5%8E%8C/" data-tooltip="乍处之欢不如久处不厌">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 YaTo. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/%E4%B9%8D%E5%A4%84%E4%B9%8B%E6%AC%A2%E4%B8%8D%E5%A6%82%E4%B9%85%E5%A4%84%E4%B8%8D%E5%8E%8C/" data-tooltip="乍处之欢不如久处不厌">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">YaTo</h4>
+    
+      <div id="about-card-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        南京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://yato534.github.io/images/view1.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://yato534.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://yato534.github.io/js/clicklove.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

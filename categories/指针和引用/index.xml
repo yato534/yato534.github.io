@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>指针和引用 on 逛街晚餐 薄雾客栈</title>
+    <link>https://yato534.github.io/categories/%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</link>
+    <description>Recent content in 指针和引用 on 逛街晚餐 薄雾客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Aug 2019 13:09:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://yato534.github.io/categories/%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43;指针和引用</title>
+      <link>https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Thu, 22 Aug 2019 13:09:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</guid>
+      <description>&lt;p&gt;　　关于C++指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

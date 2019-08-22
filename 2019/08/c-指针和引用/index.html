@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.0 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="YaTo">
+<meta name="keywords" content="指针和引用, C&#43;&#43;, 日常, 数据结构, 算法">
+<meta name="description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+
+
+<meta property="og:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C&#43;&#43;指针和引用">
+<meta name="twitter:title" content="C&#43;&#43;指针和引用">
+<meta property="og:url" content="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
+<meta property="twitter:url" content="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
+<meta property="og:site_name" content="逛街晚餐 薄雾客栈">
+<meta property="og:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta name="twitter:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-08-22T13:09:47">
+  
+  
+    <meta property="article:modified_time" content="2019-08-22T13:09:47">
+  
+  
+  
+    
+      <meta property="article:section" content="技术小白">
+    
+      <meta property="article:section" content="指针和引用">
+    
+  
+  
+    
+      <meta property="article:tag" content="指针">
+    
+      <meta property="article:tag" content="引用">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/star1.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/star1.jpg">
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/star.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/star.jpg">
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/yato.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/yato.jpg">
+
+
+    <title>C&#43;&#43;指针和引用</title>
+
+    <link rel="icon" href="https://yato534.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://yato534.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://yato534.github.io/">逛街晚餐 薄雾客栈</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://yato534.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://yato534.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">YaTo</h4>
+        
+          <h5 class="sidebar-profile-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/yato534" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/images/star.jpg')"
+       data-behavior="5">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      C&#43;&#43;指针和引用
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-08-22T13:09:47&#43;08:00">
+        
+  八月 22, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%8a%80%e6%9c%af%e5%b0%8f%e7%99%bd">技术小白</a>, 
+    
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%8c%87%e9%92%88%e5%92%8c%e5%bc%95%e7%94%a8">指针和引用</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>　　关于C++指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·</p>
+
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#指针和引用的区别">指针和引用的区别</a></li>
+<li><a href="#指针和引用实例">指针和引用实例</a></li>
+<li><a href="#const和指针">const和指针</a></li>
+<li><a href="#结语">结语</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="定义">定义</h2>
+
+<p>　　首先，指针的定义是什么？通过网上搜索可以了解到指针就是一个地址，而地址就是某个内存位置的一个编号。内存位置里面所储存的数据就是指针所指向的内容。<br />
+　　既然了解了指针的定义，那么如何来使用指针呢？假设我们定义一个变量int x = 10;如何使用指针变量y来获取x的值呢？我们可以使用 int *y = &x;在此有人可能会有疑问，为什么要使用&amp;x,因为指针所指向的是一个地址，所用我们需要使用&amp;x来获取x的地址。<br />
+　　简单了解完了指针的概念之后我们来看一下什么是引用。关于引用的定义其实引用就是另一个变量的别名，就好比我叫瓦尔基里·安德磊，周围人觉得我的名字太长，给我取了个小名叫小磊。所以小磊就是我的一个别名，但本质上来说，这两个都是我。既然如此，我们该如何使用引用呢？同样的，我们定义一个变量int x =10;引用的话就是 int&amp; y = 10;所以当我们改变了y的值，x的值也会随之改变。</p>
+
+<h2 id="指针和引用的区别">指针和引用的区别</h2>
+
+<p>　　那么指针和引用到底有哪些区别呢？<br />
+　　（1）指针不必初始化，因为需要做判空操作，而引用必须初始化，不能为空，就好比一个根本不存在的东西是没办法引用的。<br />
+　　（2）引用只能被初始化一次，之后不可变，而指针可变。<br />
+　　（3）有const指针，却没有const引用，这里的const引用指的是 int &amp;const x;因为这是没有意义的。<br />
+　　（4）&rdquo;sizeof指针&rdquo;得到的是指针本身的大小，而&rdquo;sizeof引用&rdquo;得到的是所指向的变量（对象）的大小。<br />
+　　（5）指针和引用的自增（++）运算意义不一样，指针的++是内存地址的++，而引用的++是变量本身的++。<br />
+　　（6）引用是安全的，因为多了类型检查，而指针不是。</p>
+
+<h2 id="指针和引用实例">指针和引用实例</h2>
+
+<p>　　接下来我们通过一个简单例子了解一下指针传参和引用传参。<br />
+　　首先是指针传参：</p>
+
+<pre><code>#include&lt;iostream&gt;
+
+void swap(int* x, int* y) {
+	int t = 0;
+	t = *x;
+	*x = *y;
+	*y = t;
+}
+int main() {
+	int a = 1, b = 42;
+	std::cout &lt;&lt; &quot;Before：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
+	swap(&amp;a, &amp;b);
+	std::cout &lt;&lt; &quot;After：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
+	return 0;
+}
+</code></pre>
+
+<pre><code>输出结果为：Before: a =1 b = 42  
+　　　　　　After：a =42 b =1
+</code></pre>
+
+<p>　　然后是引用传参：</p>
+
+<pre><code>#include&lt;iostream&gt;
+
+void swap(int&amp; x, int&amp; y) {
+	int t = 0;
+	t = x; 
+	x = y; 
+	y = t;
+}
+int main() {
+	int a = 1, b = 42;
+	std::cout &lt;&lt; &quot;Before：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
+	swap(a, b);
+	std::cout &lt;&lt; &quot;After：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
+	return 0;
+}
+</code></pre>
+
+<pre><code>输出结果为：Before: a =1 b = 42  
+　　　　　　After：a =42 b =1
+</code></pre>
+
+<h2 id="const和指针">const和指针</h2>
+
+<p>　　当const和指针用在一起的时候，不花点心思真的很容易搅浑，所以在此列出一些常见的用法。</p>
+
+<pre><code>　　常量指针/常指针：const int* p;(等于int const* p;) const在*左边，表示*p为常量，经由*p不能更改指针所指向的内容。  
+　　指针常量：int* const p; const在*右边，表示p为常量，经由p不能更改指针所指的方向。
+</code></pre>
+
+<p>　　说起来似乎有些拗口，其实简单来说就是const和*哪个在前面就先读谁，const在谁的前面谁就不能改变。还不好理解，那么我们就来举几个例子。</p>
+
+<pre><code>　　const int x = 42;//常量申明
+	x = 21;//ERROR，const修饰的常量x的值不能发生改变
+	int y = 2;
+	const int* p = &amp;x;//这是一个常量指针/常指针，本质是一个指针,取得x的地址
+	(*p) = 24;//ERROER，*P为常量，不能通过*P更改指针所指向的内容
+	int* const r = &amp;y;//这是一个指针常量，本质是一个常量
+	r = &amp;z;//ERROR，r是常量，其值不可变
+	*r = 20;//correct
+	const int* const s = &amp;y;//这是一个常指针常量，表示指针不可改变，指针所指向的值也不能改变
+</code></pre>
+
+<h2 id="结语">结语</h2>
+
+<p>　　最后引用一下北邮崔毅东教授的一句话：一般来说，能用引用就尽量不要用指针。引用更加直观，更少的出现意外的疏忽导致的错误。
+指针有二重、三重之分，比引用更加灵活。有些情况下，例如使用new运算符，只能使用指针。总的来说，自我对于指针和引用的理解还是非常浅显的，在学习的过程中还有很多路要走，希望自己能够再接再厉，共勉。</p>
+
+<p>　　</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E6%8C%87%E9%92%88/">指针</a>
+
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E5%BC%95%E7%94%A8/">引用</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/" data-tooltip="hugo和Git命令">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 YaTo. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/" data-tooltip="hugo和Git命令">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">YaTo</h4>
+    
+      <div id="about-card-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        南京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://yato534.github.io/images/view1.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://yato534.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://yato534.github.io/js/clicklove.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

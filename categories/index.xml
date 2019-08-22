@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 逛街晚餐 薄雾客栈</title>
+    <link>https://yato534.github.io/categories/</link>
+    <description>Recent content in Categories on 逛街晚餐 薄雾客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Aug 2019 13:09:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://yato534.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>技术小白</title>
+      <link>https://yato534.github.io/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD/</link>
+      <pubDate>Thu, 22 Aug 2019 13:09:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>指针和引用</title>
+      <link>https://yato534.github.io/categories/%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Thu, 22 Aug 2019 13:09:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/categories/%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo和git</title>
+      <link>https://yato534.github.io/categories/hugo%E5%92%8Cgit/</link>
+      <pubDate>Fri, 16 Aug 2019 22:17:47 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/categories/hugo%E5%92%8Cgit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活日常</title>
+      <link>https://yato534.github.io/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Fri, 16 Aug 2019 18:33:59 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>美句欣赏</title>
+      <link>https://yato534.github.io/categories/%E7%BE%8E%E5%8F%A5%E6%AC%A3%E8%B5%8F/</link>
+      <pubDate>Fri, 16 Aug 2019 18:33:59 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/categories/%E7%BE%8E%E5%8F%A5%E6%AC%A3%E8%B5%8F/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
