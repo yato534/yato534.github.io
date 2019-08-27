@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 逛街晚餐 薄雾客栈</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Aug 2019 13:09:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 10:17:49 +0800</lastBuildDate>
     
 	<atom:link href="https://yato534.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;11继承</title>
+      <link>https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Tue, 27 Aug 2019 10:17:49 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/</guid>
+      <description>&lt;p&gt;　　我们都知道C++面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>C&#43;&#43;指针和引用</title>

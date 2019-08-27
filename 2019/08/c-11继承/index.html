@@ -7,26 +7,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.57.0 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="YaTo">
-<meta name="keywords" content="指针和引用, C&#43;&#43;, 日常, 数据结构, 算法">
-<meta name="description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta name="keywords" content="C&#43;&#43;继承, C&#43;&#43;, 日常, 数据结构, 算法">
+<meta name="description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
 
 
-<meta property="og:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta property="og:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C&#43;&#43;指针和引用">
-<meta name="twitter:title" content="C&#43;&#43;指针和引用">
-<meta property="og:url" content="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
-<meta property="twitter:url" content="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
+<meta property="og:title" content="C&#43;&#43;11继承">
+<meta name="twitter:title" content="C&#43;&#43;11继承">
+<meta property="og:url" content="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
+<meta property="twitter:url" content="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
 <meta property="og:site_name" content="逛街晚餐 薄雾客栈">
-<meta property="og:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
-<meta name="twitter:description" content="　　关于C&#43;&#43;指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·">
+<meta property="og:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
+<meta name="twitter:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-08-22T13:09:47">
+    <meta property="article:published_time" content="2019-08-27T10:17:49">
   
   
-    <meta property="article:modified_time" content="2019-08-22T13:09:47">
+    <meta property="article:modified_time" content="2019-08-27T10:17:49">
   
   
   
@@ -38,9 +38,9 @@
   
   
     
-      <meta property="article:tag" content="指针">
+      <meta property="article:tag" content="C&#43;&#43;">
     
-      <meta property="article:tag" content="引用">
+      <meta property="article:tag" content="继承">
     
   
 
@@ -53,12 +53,12 @@
 
 
 
-  <meta property="og:image" content="https://yato534.github.io/images/star1.jpg">
-  <meta property="twitter:image" content="https://yato534.github.io/images/star1.jpg">
+  <meta property="og:image" content="https://yato534.github.io/images/shuimu.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/shuimu.jpg">
 
 
-  <meta property="og:image" content="https://yato534.github.io/images/star.jpg">
-  <meta property="twitter:image" content="https://yato534.github.io/images/star.jpg">
+  <meta property="og:image" content="https://yato534.github.io/images/xingkong.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/xingkong.jpg">
 
 
 
@@ -67,14 +67,14 @@
   <meta property="twitter:image" content="https://yato534.github.io/images/yato.jpg">
 
 
-    <title>C&#43;&#43;指针和引用</title>
+    <title>C&#43;&#43;11继承</title>
 
     <link rel="icon" href="https://yato534.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/">
+    <link rel="canonical" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,21 +216,21 @@
   <div class="post-header-cover
               text-center
               post-header-cover--full"
-       style="background-image:url('/images/star.jpg')"
+       style="background-image:url('/images/xingkong.jpg')"
        data-behavior="5">
     
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      C&#43;&#43;指针和引用
+      C&#43;&#43;11继承
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-08-22T13:09:47&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-08-27T10:17:49&#43;08:00">
         
-  八月 22, 2019
+  八月 27, 2019
 
       </time>
     
@@ -261,113 +261,140 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>　　关于C++指针和引用的和区别对于一个像我一样的初学者来说一直是一件比较头疼的事情，什么是指针？如何使用指针？以及如何正确的理解指针和引用· · ·</p>
+              <p>　　我们都知道C++面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。</p>
 
 <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#定义">定义</a></li>
-<li><a href="#指针和引用的区别">指针和引用的区别</a></li>
-<li><a href="#指针和引用实例">指针和引用实例</a></li>
-<li><a href="#const和指针">const和指针</a></li>
-<li><a href="#结语">结语</a></li>
+<li><a href="#继承是什么">继承是什么</a></li>
+<li><a href="#继承的意义">继承的意义</a></li>
+<li><a href="#继承的实例">继承的实例</a></li>
+<li><a href="#代码实现">代码实现</a></li>
+<li><a href="#构造函数继承">构造函数继承</a></li>
 </ul></li>
 </ul>
-</nav>
+</nav>  
 
-<h2 id="定义">定义</h2>
+<h2 id="继承是什么">继承是什么</h2>
 
-<p>　　首先，指针的定义是什么？通过网上搜索可以了解到指针就是一个地址，而地址就是某个内存位置的一个编号。内存位置里面所储存的数据就是指针所指向的内容。<br />
-　　既然了解了指针的定义，那么如何来使用指针呢？假设我们定义一个变量int x = 10;如何使用指针变量y来获取x的值呢？我们可以使用 int *y = &x;在此有人可能会有疑问，为什么要使用&amp;x,因为指针所指向的是一个地址，所用我们需要使用&amp;x来获取x的地址。<br />
-　　简单了解完了指针的概念之后我们来看一下什么是引用。关于引用的定义其实引用就是另一个变量的别名，就好比我叫瓦尔基里·安德磊，周围人觉得我的名字太长，给我取了个小名叫小磊。所以小磊就是我的一个别名，但本质上来说，这两个都是我。既然如此，我们该如何使用引用呢？同样的，我们定义一个变量int x =10;引用的话就是 int&amp; y = 10;所以当我们改变了y的值，x的值也会随之改变。</p>
+<p>　　何为继承？简单来说，继承就是在一个已有类的基础上构建一个新的类，这个新构建的类我们就称之为子类或者派生类，而原有的类就是父类或者基类。基类就是比较抽象的，派生类呢就是比较具体的。派生类和基类“是一种”关系，就比如说有这么一个基类：形状，那么它的派生类就可以有圆形，矩形等等。又或者说定义一个基类：车，那么它的派生类就可以有自行车，汽车，公交车等等。</p>
 
-<h2 id="指针和引用的区别">指针和引用的区别</h2>
+<h2 id="继承的意义">继承的意义</h2>
 
-<p>　　那么指针和引用到底有哪些区别呢？<br />
-　　（1）指针不必初始化，因为需要做判空操作，而引用必须初始化，不能为空，就好比一个根本不存在的东西是没办法引用的。<br />
-　　（2）引用只能被初始化一次，之后不可变，而指针可变。<br />
-　　（3）有const指针，却没有const引用，这里的const引用指的是 int &amp;const x;因为这是没有意义的。<br />
-　　（4）&rdquo;sizeof指针&rdquo;得到的是指针本身的大小，而&rdquo;sizeof引用&rdquo;得到的是所指向的变量（对象）的大小。<br />
-　　（5）指针和引用的自增（++）运算意义不一样，指针的++是内存地址的++，而引用的++是变量本身的++。<br />
-　　（6）引用是安全的，因为多了类型检查，而指针不是。</p>
+<p>　　当我们知道了什么是继承了之后，我们不禁又要提问，那我们为什么要使用继承呢？这就好比我们在编写一个程序时，往往要使用很多的类，有时候这些类都是类似的，如果我们使用了继承的话，就可以提高代码重用率，缩短程序开发时间时间，可以说大大提高的编程的效率，对程序员来说还是非常友好的。</p>
 
-<h2 id="指针和引用实例">指针和引用实例</h2>
+<h2 id="继承的实例">继承的实例</h2>
 
-<p>　　接下来我们通过一个简单例子了解一下指针传参和引用传参。<br />
-　　首先是指针传参：</p>
+<p>　　说了这么多，所以我们该如何使用继承呢？用这里将举一个小小的例子，比如有一个基类Shape，和一个派生类Circle，那么继承的话就可以写成： class Circle:public Shape{};其中public表示为公有继承，当然，也会有私有(private)继承和保护(protect)继承。而且，当我们继承基类时，我们不能直接访问基类的不可访问(private)变量，我们需要调用基类的构造函数，借此访问基类的私有变量。既然如此，如果我们不希望类被继承的话我们该怎么办？C++11引入了final特殊标识符，可以使得类不能被继承，例如：class Shape final{}；这个时候如果使用class Circle: public Shape{}来继承Shape类的话，程序就会报错。</p>
+
+<h2 id="代码实现">代码实现</h2>
+
+<p>　　现在通过一个代码实现简单展示一下继承。首先是头文件基类Shape类：</p>
 
 <pre><code>#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;array&gt;
+using std::string;
+using std::array;
+using namespace std::string_literals;
 
-void swap(int* x, int* y) {
-	int t = 0;
-	t = *x;
-	*x = *y;
-	*y = t;
-}
-int main() {
-	int a = 1, b = 42;
-	std::cout &lt;&lt; &quot;Before：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
-	swap(&amp;a, &amp;b);
-	std::cout &lt;&lt; &quot;After：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
-	return 0;
-}
+enum class Color {
+	white, black, red, green, blue, yellow,
+};//关键字enum，定义一个枚举类型
+class Shape {
+private:
+	Color color{ Color::black };//就地初始化
+public:
+	Shape() = default;//无参构造函数
+	Shape(Color color_) {
+		color = color_;
+	}
+	Color getColor() {
+		return color;
+	}
+	void setColor(Color color_) {
+		color = color_;
+	}
+	string toString() {
+		array &lt;string, 6&gt;c{ &quot;white&quot;s,&quot;black&quot;s,&quot;red&quot;s,&quot;green&quot;s,&quot;blue&quot;s,&quot;yellow&quot;s };//使用数组类array
+		return c[static_cast&lt;int&gt;(color)];//static_cast就是强制类型转换color为整型值
+	}
+};
 </code></pre>
 
-<pre><code>输出结果为：Before: a =1 b = 42  
-　　　　　　After：a =42 b =1
-</code></pre>
-
-<p>　　然后是引用传参：</p>
+<p>　　然后是继承类Circle和主函数：</p>
 
 <pre><code>#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&quot;Shape.h&quot;
+#include&quot;Circle.h&quot;
+//类Circle继承基类Shape
+class Circle : public Shape {
+public:
+	Circle();//无参构造函数
+	Circle(Color color_) :Shape(color_) {
 
-void swap(int&amp; x, int&amp; y) {
-	int t = 0;
-	t = x; 
-	x = y; 
-	y = t;
-}
+	}
+};
+//主函数
 int main() {
-	int a = 1, b = 42;
-	std::cout &lt;&lt; &quot;Before：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
-	swap(a, b);
-	std::cout &lt;&lt; &quot;After：a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b &lt;&lt; std::endl;
-	return 0;
+	Shape s1{ Color::blue };
+	Circle c1{ Color::green };
+
+	std::cout &lt;&lt;&quot;Shape:&quot;&lt;&lt; s1.toString() &lt;&lt; std::endl;
+	std::cout &lt;&lt;&quot;Circle:&quot;&lt;&lt; c1.toString() &lt;&lt; std::endl;
 }
 </code></pre>
 
-<pre><code>输出结果为：Before: a =1 b = 42  
-　　　　　　After：a =42 b =1
+<p>　　最后得到的输出结果为：</p>
+
+<pre><code>Shape：blue
+Circle: green
 </code></pre>
 
-<h2 id="const和指针">const和指针</h2>
+<h2 id="构造函数继承">构造函数继承</h2>
 
-<p>　　当const和指针用在一起的时候，不花点心思真的很容易搅浑，所以在此列出一些常见的用法。</p>
+<p>　　说完了类继承，在C++11中派生类还能继承基类的构造函数，当然析构函数和友元函数不能继承。当我们要继承基类的构造函数时，我们可以使用using A: A这种形式继承所有基类的构造函数，不能仅继承某个构造函数。下面简单展示代码实例：</p>
 
-<pre><code>　　常量指针/常指针：const int* p;(等于int const* p;) const在*左边，表示*p为常量，经由*p不能更改指针所指向的内容。  
-　　指针常量：int* const p; const在*右边，表示p为常量，经由p不能更改指针所指的方向。
+<pre><code>#include&lt;iostream&gt;
+using std::cout;
+using std::endl;
+class A {
+public:
+	A() {
+		cout &lt;&lt; &quot;A is:()&quot; &lt;&lt; endl;
+	}
+	A(int i) {
+		cout &lt;&lt; &quot;A is:&quot; &lt;&lt; i &lt;&lt; endl;
+	}
+};
+class B : public A {
+public:
+	using A::A;//继承构造函数
+	B() {
+		cout &lt;&lt; &quot;B is:()&quot; &lt;&lt; endl;
+	}
+	B(double x): A(static_cast&lt;int&gt;(x)) {
+		cout &lt;&lt; &quot;B is:&quot; &lt;&lt; x &lt;&lt; endl;
+	}
+};
+int main() {
+	B b1;
+	B b{ 2.2 };
+
+}
 </code></pre>
 
-<p>　　说起来似乎有些拗口，其实简单来说就是const和*哪个在前面就先读谁，const在谁的前面谁就不能改变。还不好理解，那么我们就来举几个例子。</p>
+<p>　　运行结果：</p>
 
-<pre><code>　　const int x = 42;//常量申明
-	x = 21;//ERROR，const修饰的常量x的值不能发生改变
-	int y = 2;
-	const int* p = &amp;x;//这是一个常量指针/常指针，本质是一个指针,取得x的地址
-	(*p) = 24;//ERROER，*P为常量，不能通过*P更改指针所指向的内容
-	int* const r = &amp;y;//这是一个指针常量，本质是一个常量
-	r = &amp;z;//ERROR，r是常量，其值不可变
-	*r = 20;//correct
-	const int* const s = &amp;y;//这是一个常指针常量，表示指针不可改变，指针所指向的值也不能改变
+<pre><code>A is:()
+B is:()
+A is:2
+B is:2.2
 </code></pre>
 
-<h2 id="结语">结语</h2>
-
-<p>　　最后引用一下北邮崔毅东教授的一句话：一般来说，能用引用就尽量不要用指针。引用更加直观，更少的出现意外的疏忽导致的错误。
-指针有二重、三重之分，比引用更加灵活。有些情况下，例如使用new运算符，只能使用指针。总的来说，自我对于指针和引用的理解还是非常浅显的，在学习的过程中还有很多路要走，希望自己能够再接再厉，共勉。</p>
-
-<p>　　</p>
+<p>　　通过运行结果我们可以看出主函数通过对象调用类B的构造函数，而调用类B的构造函数之前会先调用基类的构造函数。</p>
               
             </div>
           </div>
@@ -379,9 +406,9 @@ int main() {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E6%8C%87%E9%92%88/">指针</a>
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
 
-  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E5%BC%95%E7%94%A8/">引用</a>
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E7%BB%A7%E6%89%BF/">继承</a>
 
                   </div>
                 
@@ -394,7 +421,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/" data-tooltip="C&#43;&#43;11继承">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -402,7 +429,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/" data-tooltip="hugo和Git命令">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -452,7 +479,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/" data-tooltip="C&#43;&#43;11继承">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -460,7 +487,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/hugo%E5%92%8Cgit%E5%91%BD%E4%BB%A4/" data-tooltip="hugo和Git命令">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
