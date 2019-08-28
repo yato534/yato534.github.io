@@ -7,40 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.57.0 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="YaTo">
-<meta name="keywords" content="C&#43;&#43;继承, C&#43;&#43;, 日常, 数据结构, 算法">
-<meta name="description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
+<meta name="keywords" content="剑指offer, C&#43;&#43;, 日常, 数据结构, 算法">
+<meta name="description" content="　　最近正在学习《剑指Offer》这本书，这个专题主要就是对于自己学习进度的一个记录和内容的复习。通过理解思路和代码之后再将代码实现一遍，巩固自己的记忆。">
 
 
-<meta property="og:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
+<meta property="og:description" content="　　最近正在学习《剑指Offer》这本书，这个专题主要就是对于自己学习进度的一个记录和内容的复习。通过理解思路和代码之后再将代码实现一遍，巩固自己的记忆。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C&#43;&#43;11继承">
-<meta name="twitter:title" content="C&#43;&#43;11继承">
-<meta property="og:url" content="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
-<meta property="twitter:url" content="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
+<meta property="og:title" content="剑指offer-数组">
+<meta name="twitter:title" content="剑指offer-数组">
+<meta property="og:url" content="https://yato534.github.io/2019/08/%E5%89%91%E6%8C%87offer-%E6%95%B0%E7%BB%84/">
+<meta property="twitter:url" content="https://yato534.github.io/2019/08/%E5%89%91%E6%8C%87offer-%E6%95%B0%E7%BB%84/">
 <meta property="og:site_name" content="逛街晚餐 薄雾客栈">
-<meta property="og:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
-<meta name="twitter:description" content="　　我们都知道C&#43;&#43;面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。">
+<meta property="og:description" content="　　最近正在学习《剑指Offer》这本书，这个专题主要就是对于自己学习进度的一个记录和内容的复习。通过理解思路和代码之后再将代码实现一遍，巩固自己的记忆。">
+<meta name="twitter:description" content="　　最近正在学习《剑指Offer》这本书，这个专题主要就是对于自己学习进度的一个记录和内容的复习。通过理解思路和代码之后再将代码实现一遍，巩固自己的记忆。">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-08-27T10:17:49">
+    <meta property="article:published_time" content="2019-08-28T14:03:43">
   
   
-    <meta property="article:modified_time" content="2019-08-27T10:17:49">
+    <meta property="article:modified_time" content="2019-08-28T14:03:43">
   
   
   
     
       <meta property="article:section" content="技术小白">
     
-      <meta property="article:section" content="C&#43;&#43;">
+      <meta property="article:section" content="数据结构与算法">
     
   
   
     
-      <meta property="article:tag" content="C&#43;&#43;">
+      <meta property="article:tag" content="算法">
     
-      <meta property="article:tag" content="继承">
+      <meta property="article:tag" content="数组">
     
   
 
@@ -53,12 +53,12 @@
 
 
 
-  <meta property="og:image" content="https://yato534.github.io/images/shuimu.jpg">
-  <meta property="twitter:image" content="https://yato534.github.io/images/shuimu.jpg">
+  <meta property="og:image" content="https://yato534.github.io/images/gaoxiao.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/gaoxiao.jpg">
 
 
-  <meta property="og:image" content="https://yato534.github.io/images/xingkong.jpg">
-  <meta property="twitter:image" content="https://yato534.github.io/images/xingkong.jpg">
+  <meta property="og:image" content="https://yato534.github.io/images/moon.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/moon.jpg">
 
 
 
@@ -67,14 +67,14 @@
   <meta property="twitter:image" content="https://yato534.github.io/images/yato.jpg">
 
 
-    <title>C&#43;&#43;11继承</title>
+    <title>剑指offer-数组</title>
 
     <link rel="icon" href="https://yato534.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/">
+    <link rel="canonical" href="https://yato534.github.io/2019/08/%E5%89%91%E6%8C%87offer-%E6%95%B0%E7%BB%84/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,21 +216,21 @@
   <div class="post-header-cover
               text-center
               post-header-cover--full"
-       style="background-image:url('/images/xingkong.jpg')"
+       style="background-image:url('/images/moon.jpg')"
        data-behavior="5">
     
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      C&#43;&#43;11继承
+      剑指offer-数组
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-08-27T10:17:49&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-08-28T14:03:43&#43;08:00">
         
-  八月 27, 2019
+  八月 28, 2019
 
       </time>
     
@@ -241,7 +241,7 @@
     
       <a class="category-link" href="https://yato534.github.io/categories/%e6%8a%80%e6%9c%af%e5%b0%8f%e7%99%bd">技术小白</a>, 
     
-      <a class="category-link" href="https://yato534.github.io/categories/c&#43;&#43;">C&#43;&#43;</a>
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95">数据结构与算法</a>
     
   
 
@@ -261,140 +261,100 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>　　我们都知道C++面向对象(OOP)一共有四个特性，抽象、多态、继承和封装，在此，通过自己的学习和记录，本篇文章将简要的介绍一下继承的相关概念，方便与理解。</p>
+              <p>　　最近正在学习《剑指Offer》这本书，这个专题主要就是对于自己学习进度的一个记录和内容的复习。通过理解思路和代码之后再将代码实现一遍，巩固自己的记忆。</p>
 
 <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#题目一">题目一</a>
 <ul>
-<li><a href="#继承是什么">继承是什么</a></li>
-<li><a href="#继承的意义">继承的意义</a></li>
-<li><a href="#继承的实例">继承的实例</a></li>
+<li><a href="#数组中重复的数字">数组中重复的数字</a></li>
+<li><a href="#思路理解">思路理解</a></li>
 <li><a href="#代码实现">代码实现</a></li>
-<li><a href="#构造函数继承">构造函数继承</a></li>
+</ul></li>
+<li><a href="#题目二">题目二</a>
+<ul>
+<li><a href="#二维数组中的查找">二维数组中的查找</a></li>
+<li><a href="#思路理解-1">思路理解</a></li>
+<li><a href="#代码实现-1">代码实现</a></li>
 </ul></li>
 </ul>
-</nav>  
+</nav>
 
-<h2 id="继承是什么">继承是什么</h2>
+<h1 id="题目一">题目一</h1>
 
-<p>　　何为继承？简单来说，继承就是在一个已有类的基础上构建一个新的类，这个新构建的类我们就称之为子类或者派生类，而原有的类就是父类或者基类。基类就是比较抽象的，派生类呢就是比较具体的。派生类和基类“是一种”关系，就比如说有这么一个基类：形状，那么它的派生类就可以有圆形，矩形等等。又或者说定义一个基类：车，那么它的派生类就可以有自行车，汽车，公交车等等。</p>
+<h2 id="数组中重复的数字">数组中重复的数字</h2>
 
-<h2 id="继承的意义">继承的意义</h2>
+<p>　　在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
 
-<p>　　当我们知道了什么是继承了之后，我们不禁又要提问，那我们为什么要使用继承呢？这就好比我们在编写一个程序时，往往要使用很多的类，有时候这些类都是类似的，如果我们使用了继承的话，就可以提高代码重用率，缩短程序开发时间时间，可以说大大提高的编程的效率，对程序员来说还是非常友好的。</p>
+<h2 id="思路理解">思路理解</h2>
 
-<h2 id="继承的实例">继承的实例</h2>
-
-<p>　　说了这么多，所以我们该如何使用继承呢？用这里将举一个小小的例子，比如有一个基类Shape，和一个派生类Circle，那么继承的话就可以写成： class Circle:public Shape{};其中public表示为公有继承，当然，也会有私有(private)继承和保护(protect)继承。而且，当我们继承基类时，我们不能直接访问基类的不可访问(private)变量，我们需要调用基类的构造函数，借此访问基类的私有变量。既然如此，如果我们不希望类被继承的话我们该怎么办？C++11引入了final特殊标识符，可以使得类不能被继承，例如：class Shape final{}；这个时候如果使用class Circle: public Shape{}来继承Shape类的话，程序就会报错。</p>
+<p>　　从头到尾扫描数组，假设此时处在下标为i的位置，如果下标i和下标对应的数字，假设为m相等，则i往后移一位，如果不相等，那么比较下标i所对应数字m，和下标m所对应数字n，如果m=n,说明重复，如果不相等，则交换下标i和下标m所对应的值，然后继续比较i,直到找到重复为止。</p>
 
 <h2 id="代码实现">代码实现</h2>
 
-<p>　　现在通过一个代码实现简单展示一下继承。首先是头文件基类Shape类：</p>
-
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-#include&lt;array&gt;
-using std::string;
-using std::array;
-using namespace std::string_literals;
-
-enum class Color {
-	white, black, red, green, blue, yellow,
-};//关键字enum，定义一个枚举类型
-class Shape {
-private:
-	Color color{ Color::black };//就地初始化
+<pre><code>class Solution {
 public:
-	Shape() = default;//无参构造函数
-	Shape(Color color_) {
-		color = color_;
-	}
-	Color getColor() {
-		return color;
-	}
-	void setColor(Color color_) {
-		color = color_;
-	}
-	string toString() {
-		array &lt;string, 6&gt;c{ &quot;white&quot;s,&quot;black&quot;s,&quot;red&quot;s,&quot;green&quot;s,&quot;blue&quot;s,&quot;yellow&quot;s };//使用数组类array
-		return c[static_cast&lt;int&gt;(color)];//static_cast就是强制类型转换color为整型值
+	bool duplicate(int numbers[], int length, int* duplication) {
+		if (numbers == 0 || length == 0) {
+			return false;//如果数组长度为空或者长度为零则直接返回false
+		}
+		for (int i = 0; i &lt; length; i++) {
+			while (numbers[i] != i) {//当下标i不等于对应值进入循环
+				if (numbers[i] == numbers[numbers[i]]) {
+					*duplication = numbers[i];//找到重复的数字
+					return true;
+				}
+				else {//如果不相等，则交换两下标的值
+					int temp = numbers[i];
+					numbers[i] = numbers[temp];
+					numbers[temp] = temp;
+				}
+			}
+		}
+		return false;
 	}
 };
 </code></pre>
 
-<p>　　然后是继承类Circle和主函数：</p>
+<h1 id="题目二">题目二</h1>
 
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-#include&quot;Shape.h&quot;
-#include&quot;Circle.h&quot;
-//类Circle继承基类Shape
-class Circle : public Shape {
+<h2 id="二维数组中的查找">二维数组中的查找</h2>
+
+<p>　　在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+
+<h2 id="思路理解-1">思路理解</h2>
+
+<p>　　因为二维数组从左到右以及从上到下都是递增，所以取数组中右上角的数，如果右上角的数比该数小，那就说明右上角左边的数都比该数小，那么这一行可以剔除。如果右上角的数比该数大，那就说明右上角下面的数都比该数大，呢么这一列可以剔除。依次比较，知道找到该数为止。</p>
+
+<h2 id="代码实现-1">代码实现</h2>
+
+<pre><code>class Solution {
 public:
-	Circle();//无参构造函数
-	Circle(Color color_) :Shape(color_) {
-
+	bool Find(int target, vector&lt;vector&lt;int&gt;&gt;array) {//定义整数和二维数组
+		int rows = array.size();//初始化行
+		if (rows &lt; 0) {
+			return false;
+		}
+		int cols = array[0].size();//初始化列
+		if (cols &lt; 0) {
+			return false;
+		}
+		int row = 0, col = cols - 1;//取得右上角的数
+		while (row &lt; rows &amp;&amp; col &gt;= 0) {
+			if (target &gt; array[row][col]) {
+				row++;//如果右上角的数比该整数小，则行++
+			}
+			else if(target &lt; array[row][col]) {
+				col--;//如果右上角的数比该整数大，则列--
+			}
+			else {
+				return true;
+			}
+		}
+		return false;
 	}
 };
-//主函数
-int main() {
-	Shape s1{ Color::blue };
-	Circle c1{ Color::green };
-
-	std::cout &lt;&lt;&quot;Shape:&quot;&lt;&lt; s1.toString() &lt;&lt; std::endl;
-	std::cout &lt;&lt;&quot;Circle:&quot;&lt;&lt; c1.toString() &lt;&lt; std::endl;
-}
 </code></pre>
-
-<p>　　最后得到的输出结果为：</p>
-
-<pre><code>Shape：blue
-Circle: green
-</code></pre>
-
-<h2 id="构造函数继承">构造函数继承</h2>
-
-<p>　　说完了类继承，在C++11中派生类还能继承基类的构造函数，当然析构函数和友元函数不能继承。当我们要继承基类的构造函数时，我们可以使用using A: A这种形式继承所有基类的构造函数，不能仅继承某个构造函数。下面简单展示代码实例：</p>
-
-<pre><code>#include&lt;iostream&gt;
-using std::cout;
-using std::endl;
-class A {
-public:
-	A() {
-		cout &lt;&lt; &quot;A is:()&quot; &lt;&lt; endl;
-	}
-	A(int i) {
-		cout &lt;&lt; &quot;A is:&quot; &lt;&lt; i &lt;&lt; endl;
-	}
-};
-class B : public A {
-public:
-	using A::A;//继承构造函数
-	B() {
-		cout &lt;&lt; &quot;B is:()&quot; &lt;&lt; endl;
-	}
-	B(double x): A(static_cast&lt;int&gt;(x)) {
-		cout &lt;&lt; &quot;B is:&quot; &lt;&lt; x &lt;&lt; endl;
-	}
-};
-int main() {
-	B b1;
-	B b{ 2.2 };
-
-}
-</code></pre>
-
-<p>　　运行结果：</p>
-
-<pre><code>A is:()
-B is:()
-A is:2
-B is:2.2
-</code></pre>
-
-<p>　　通过运行结果我们可以看出主函数通过对象调用类B的构造函数，而调用类B的构造函数之前会先调用基类的构造函数。</p>
               
             </div>
           </div>
@@ -406,9 +366,9 @@ B is:2.2
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
 
-  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E7%BB%A7%E6%89%BF/">继承</a>
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/%E6%95%B0%E7%BB%84/">数组</a>
 
                   </div>
                 
@@ -421,7 +381,7 @@ B is:2.2
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/%E5%89%91%E6%8C%87offer-%E6%95%B0%E7%BB%84/" data-tooltip="剑指offer-数组">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -429,7 +389,7 @@ B is:2.2
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/" data-tooltip="C&#43;&#43;11继承">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -479,7 +439,7 @@ B is:2.2
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/%E5%89%91%E6%8C%87offer-%E6%95%B0%E7%BB%84/" data-tooltip="剑指offer-数组">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -487,7 +447,7 @@ B is:2.2
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" data-tooltip="C&#43;&#43;指针和引用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/08/c-11%E7%BB%A7%E6%89%BF/" data-tooltip="C&#43;&#43;11继承">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
