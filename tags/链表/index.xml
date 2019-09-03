@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链表 on 逛街晚餐 薄雾客栈</title>
+    <link>https://yato534.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
+    <description>Recent content in 链表 on 逛街晚餐 薄雾客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Sep 2019 10:41:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://yato534.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>剑指offer-字符串和链表</title>
+      <link>https://yato534.github.io/2019/09/%E5%89%91%E6%8C%87offer-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Tue, 03 Sep 2019 10:41:21 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/09/%E5%89%91%E6%8C%87offer-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E9%93%BE%E8%A1%A8/</guid>
+      <description>&lt;p&gt;　　这篇文章主要就是剑指offer中字符串替换空格题目和逆序打印链表两道题目&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
