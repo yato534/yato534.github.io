@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.0 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="YaTo">
+<meta name="keywords" content="数据库使用, C&#43;&#43;, 日常, 数据结构, 算法">
+<meta name="description" content="　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。">
+
+
+<meta property="og:description" content="　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL初体验">
+<meta name="twitter:title" content="MySQL初体验">
+<meta property="og:url" content="https://yato534.github.io/2019/10/mysql%E5%88%9D%E4%BD%93%E9%AA%8C/">
+<meta property="twitter:url" content="https://yato534.github.io/2019/10/mysql%E5%88%9D%E4%BD%93%E9%AA%8C/">
+<meta property="og:site_name" content="逛街晚餐 薄雾客栈">
+<meta property="og:description" content="　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。">
+<meta name="twitter:description" content="　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-10-11T22:09:32">
+  
+  
+    <meta property="article:modified_time" content="2019-10-11T22:09:32">
+  
+  
+  
+    
+      <meta property="article:section" content="技术小白">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="mysql">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/mysql.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/mysql.jpg">
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/huoshan.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/huoshan.jpg">
+
+
+
+
+  <meta property="og:image" content="https://yato534.github.io/images/yato.jpg">
+  <meta property="twitter:image" content="https://yato534.github.io/images/yato.jpg">
+
+
+    <title>MySQL初体验</title>
+
+    <link rel="icon" href="https://yato534.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://yato534.github.io/2019/10/mysql%E5%88%9D%E4%BD%93%E9%AA%8C/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://yato534.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://yato534.github.io/">逛街晚餐 薄雾客栈</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://yato534.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://yato534.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">YaTo</h4>
+        
+          <h5 class="sidebar-profile-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/yato534" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://yato534.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/images/huoshan.jpg')"
+       data-behavior="5">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      MySQL初体验
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-11T22:09:32&#43;08:00">
+        
+  十月 11, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%8a%80%e6%9c%af%e5%b0%8f%e7%99%bd">技术小白</a>, 
+    
+      <a class="category-link" href="https://yato534.github.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。</p>
+
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#数据库下载安装">数据库下载安装</a></li>
+<li><a href="#环境配置">环境配置</a></li>
+<li><a href="#使用终端操作数据库">使用终端操作数据库</a>
+<ul>
+<li><a href="#非空约束">非空约束</a></li>
+<li><a href="#默认约束">默认约束</a></li>
+<li><a href="#外键约束">外键约束</a></li>
+</ul></li>
+<li><a href="#数据库的三大设计范式">数据库的三大设计范式</a>
+<ul>
+<li><a href="#1-第一范式">1、第一范式</a></li>
+<li><a href="#2-第二范式">2、第二范式</a></li>
+<li><a href="#3-第三范式">3、第三范式</a></li>
+</ul></li>
+<li><a href="#mysql查询练习">mysql查询练习</a>
+<ul>
+<li><a href="#往数据表中添加数据">往数据表中添加数据</a></li>
+<li><a href="#查询练习">查询练习</a>
+<ul>
+<li><a href="#1-查询student表的所有记录">1、查询Student表的所有记录</a></li>
+<li><a href="#2-查询student表中所有记录的s-name-s-gender-s-class列">2、查询Student表中所有记录的s_name,s_gender,s_class列</a></li>
+<li><a href="#3-查询教师所有的单位即不重复的depart列">3、查询教师所有的单位即不重复的depart列</a></li>
+<li><a href="#4-查询score表中成绩在60-80之间的所有记录">4、查询Score表中成绩在60-80之间的所有记录</a></li>
+<li><a href="#5-查询score表中成绩为85或86或88的记录">5、查询Score表中成绩为85或86或88的记录</a></li>
+<li><a href="#6-查询student表中-b1602-班或性别为-女-的同学记录">6、查询Student表中“B1602”班或性别为“女”的同学记录</a></li>
+<li><a href="#7-以class降序查询student表所有记录">7、以class降序查询Student表所有记录</a></li>
+<li><a href="#8-以c-no升序-degree降序查询score表的所有记录">8、以c_no升序、degree降序查询score表的所有记录</a></li>
+<li><a href="#9-查询-b1602-班的学生人数">9、查询&rdquo;B1602&rdquo;班的学生人数</a></li>
+<li><a href="#10-查询score表中的最高分的学生学号课程号-子查询或者排序">10、查询Score表中的最高分的学生学号课程号（子查询或者排序）</a></li>
+<li><a href="#11-查询每门课的平均成绩">11、查询每门课的平均成绩</a></li>
+<li><a href="#12-查询score表中至少有2名学生选修的并以3开头的课程的平均分数">12、查询Score表中至少有2名学生选修的并以3开头的课程的平均分数</a></li>
+<li><a href="#13-查询分数大于70-小于90的s-no列">13、查询分数大于70，小于90的s_no列</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="数据库下载安装">数据库下载安装</h2>
+
+<p>　　既然要学习MySQL，那么不可避免的我们需要先下载安装，我自己是win10的系统，首先我们直接百度MySQL,页面第一个就是官网，进去之后点击DOWNLOADS,页面拉到最下面，点击MySQL Community Server,
+<img src="https://yato534.github.io/images/mysql/xiazai.jpg" alt="hugo" />
+进去之后选择自己的系统下载即可。
+<img src="https://yato534.github.io/images/mysql/xiazai2.jpg" alt="hugo" />
+　　下载好之后我们就可以进行安装了，双击我们之前下载好的msi程序，选择Custom自定义安装，
+<img src="https://yato534.github.io/images/mysql/mysql1.jpg" alt="hugo" />
+然后如图所示选择好MySQL Server之后点击绿色箭头，把它设置为本地安装，
+<img src="https://yato534.github.io/images/mysql/mysql2.jpg" alt="hugo" />
+因为我是作为自己学习使用，所以选择第一个，
+<img src="https://yato534.github.io/images/mysql/mysql3.jpg" alt="hugo" />
+期间其他的一路next,最后我们设置自己的MySQL密码，就成功的安装了MySQL。
+<img src="https://yato534.github.io/images/mysql/mysql4.jpg" alt="hugo" /></p>
+
+<h2 id="环境配置">环境配置</h2>
+
+<p>　　安装好MySQL之后我们还需要配置环境变量，在我的电脑右键属性然后高级系统设置，然后点击环境变量，然后把MySQL的bin目录添加到path中，我是默认安装的，一般在C:\Program Files\MySQL\MySQL Server8.0\bin，
+<img src="https://yato534.github.io/images/mysql/mysql5.jpg" alt="hugo" />
+成功配置好环境变量后，我们可以检验一下自己有没有配置成功，打开cmd终端窗口，输入命令mysql -u root -p,然后输入自己设置的密码，出现如图所示，那么就表示我们成功的安装好MySQL了！
+<img src="https://yato534.github.io/images/mysql/mysql6.jpg" alt="hugo" /></p>
+
+<h2 id="使用终端操作数据库">使用终端操作数据库</h2>
+
+<p>　　接下来的学习都是在终端上进行的一系列数据库操作。</p>
+
+<h3 id="非空约束">非空约束</h3>
+
+<p>　　修饰的字段不能为空NULL</p>
+
+<pre><code>create table user9(
+　　id int,
+　　name varchar(20) NOT NULL
+);
+</code></pre>
+
+<pre><code>insert into user9(id) values(1);
+//ERROR name为空
+insert into user9 values(1, '夜斗');
+//true
+insert into user9 (name) values('夜斗');
+//true
+</code></pre>
+
+<h3 id="默认约束">默认约束</h3>
+
+<p>　　就是当我们插入字段值的时候，如果没有传值，就会使用默认值。</p>
+
+<pre><code>create table user10(
+    id int,
+    name varchar(20),
+    age int default 10
+);
+</code></pre>
+
+<pre><code>insert into user10(id, name) values(1, '夜斗');
+//age默认为10
+insert into user10 values(1,'夜斗'，19);
+//age传值后就不会使用默认值
+</code></pre>
+
+<h3 id="外键约束">外键约束</h3>
+
+<p>　　设计到两个表：父表，子表，或者说主表，副表。</p>
+
+<pre><code>//班级
+create  table classes(
+    id int primary key,
+    name varchar(20)
+);
+//学生表
+create table students(
+    id int primary key,
+     name varchar(20),
+    class_id int,
+    foreign key(class_id) references classes(id)
+);
+</code></pre>
+
+<pre><code>insert into students values(1001, '夜斗', 1);
+insert into students values(1002, '夜斗', 2);
+insert into students values(1003, '夜斗', 3);
+insert into students values(1004, '夜斗', 4);
+
+insert into students values(1005, '夜斗', 5);//ERROR 
+
+insert into classes values(1, '一班');
+insert into classes values(2, '二班');
+insert into classes values(3, '三班');
+insert into classes values(4, '四班');
+//1、主表 classes中没有的数据值，在副表中，是不可以使用的。
+//2、主表中的记录被副标引用，是不可以被删除的。
+delete from classes where id = '4';//ERROR
+</code></pre>
+
+<h2 id="数据库的三大设计范式">数据库的三大设计范式</h2>
+
+<h3 id="1-第一范式">1、第一范式</h3>
+
+<p>　　数据库表中的所有字段都是不可分割的原子值。</p>
+
+<pre><code>create table students2(
+    id int primary key,
+    name varchar(20),
+    address varchar(30)
+);
+</code></pre>
+
+<pre><code>insert into students values(1, '夜斗1', '江苏南京');
+insert into students values(2, '夜斗2', '江苏无锡');
+insert into students values(3, '夜斗3', '安徽六安');
+//字段值还可以继续拆分的，就不满足第一范式
+</code></pre>
+
+<pre><code>create table students3(
+    id int primary key,
+    name varchar(20),
+    privence varchar(30),
+    city varchar(30)
+);
+</code></pre>
+
+<pre><code>insert into students values(1, '夜斗1', '江苏', '南京');
+insert into students values(2, '夜斗2', '江苏', '无锡');
+insert into students values(3, '夜斗3', '安徽', '六安');
+//范式设计的越详细，对于某些实际操作可能更好，但是不一定都是好处，需根据实际开发设计
+</code></pre>
+
+<h3 id="2-第二范式">2、第二范式</h3>
+
+<p>　　必须是满足第一范式的前提下，第二范式要求，除主键外的每一列都必须完全依赖与主键；如果出现不完全依赖，只可能发生在联合主键的情况下。</p>
+
+<pre><code>//订单表
+create table myorder(
+    produce_id int,
+    customer_id int,
+    product_name varchar(20),
+    customer_name varchar(20),
+    primary key(product_id, customer_id);
+);
+//问题？除主键以外的其他列，只依赖与主键的部分字段，不满足第二范式。
+</code></pre>
+
+<pre><code>//解决上述问题的方法就是拆表
+create table myorder(
+    order_id int primary key,
+    produce_id int,
+    customer_id int,
+);
+
+create table product(
+    id int primary key,
+    name varchar(20),
+);
+
+create table customer(
+    id int primary key,
+    name varchar(20),
+//拆成三个表之后，满足第二范式。    
+</code></pre>
+
+<h3 id="3-第三范式">3、第三范式</h3>
+
+<p>　　必须先满足第二范式，除开主键列的其他列不能有传递依赖关系。</p>
+
+<pre><code>create table myorder(
+    order_id int primary key,
+    produce_id int,
+    customer_id int,
+    cestomer_phone varchar(20)//不满足第三范式
+);
+</code></pre>
+
+<pre><code>create table myorder(
+    order_id int primary key,
+    produce_id int,
+    customer_id int,
+);
+create table customer(
+    id int primary key,
+    name varchar(20),
+    phone varchar(20)
+);
+//满足第三范式
+</code></pre>
+
+<h2 id="mysql查询练习">mysql查询练习</h2>
+
+<pre><code>学生表
+Student
+学号
+姓名
+性别
+出生年月日
+所在班级
+create table Student(
+    s_no varchar(20) primary key,
+    s_name varchar(20) not null,
+    s_gender varchar(10) not null,
+    s_birthday datetime,
+    s_class varchar(20)
+);
+
+教师表
+Teacher
+教师编号
+教师姓名
+教师性别
+出生年月日
+职称
+所在部门
+create table Teacher(
+    t_no varchar(20) primary key,
+    t_name varchar(20) not null,
+    t_gender varchar(10) not null,
+    t_birthday datetime,
+    t_prof varchar(20) not null,
+    t_depart varchar(20) not null
+);
+
+课程表
+Course
+课程号
+课程名称
+教师编号
+create table Course(
+    c_no varchar(20) primary key,
+    c_name varchar(20) not null,
+    t_no varchar(20) not null,
+    foreign key(t_no) references teacher(t_no)
+);
+
+成绩表
+Score
+学号
+课程号
+成绩
+create table Score(
+    s_no varchar(20) not null,
+    c_no varchar(20) not null,
+    s_degree decimal,
+    foreign key(s_no) references Student(s_no),
+    foreign key(c_no) references Course(c_no),
+    primary key(s_no, c_no)
+);
+</code></pre>
+
+<h3 id="往数据表中添加数据">往数据表中添加数据</h3>
+
+<pre><code>//添加学生信息
+insert into Student values('1810', '张一', '男', '1990-09-01', 'B1604');
+insert into Student values('1811', '李二', '男', '1991-10-02', 'B1605');
+insert into Student values('1812', '孙钱', '男', '1992-11-03', 'B1604');
+insert into Student values('1813', '赵雯', '女', '1994-12-05', 'B1603');
+insert into Student values('1814', '王立', '男', '1996-02-11', 'B1602');
+insert into Student values('1815', '欧锦', '女', '1997-06-23', 'B1602');
+insert into Student values('1816', '王尼玛', '女', '1994-12-05', 'B1603');
+insert into Student values('1817', '张全蛋', '男', '1996-02-11', 'B1602');
+insert into Student values('1818', '赵铁柱', '女', '1997-06-23', 'B1602');
+
+//添加教师信息
+insert into Teacher values('803', '李承', '男', '1968-09-03', '副教授', '计算机系');
+insert into Teacher values('805', '张旭', '男', '1969-01-03', '讲师', '电子工程系');
+insert into Teacher values('808', '王萍', '女', '1977-05-05', '助教', '计算机系');
+insert into Teacher values('810', '刘冰', '女', '1972-08-14', '助教', '电子工程系');
+
+//添加课程信息
+insert into Course values('3-105', '计算机导论', '803');
+insert into Course values('3-245', '操作系统', '808');
+insert into Course values('6-166', '数字电路', '805');
+insert into Course values('9-888', '高等数学', '810');
+
+//添加成绩信息
+insert into Score values('1810', '3-105', '56');
+insert into Score values('1810', '9-888', '97');
+insert into Score values('1811', '3-105', '75');
+insert into Score values('1812', '3-245', '84');
+insert into Score values('1812', '6-166', '74');
+insert into Score values('1813', '6-166', '75');
+insert into Score values('1814', '3-245', '93');
+insert into Score values('1815', '3-245', '85');
+insert into Score values('1816', '9-888', '72');
+insert into Score values('1817', '9-888', '89');
+insert into Score values('1818', '3-105', '85');
+insert into Score values('1818', '6-166', '79');
+</code></pre>
+
+<h3 id="查询练习">查询练习</h3>
+
+<h4 id="1-查询student表的所有记录">1、查询Student表的所有记录</h4>
+
+<pre><code>mysql&gt; select * from Student;
++------+--------+----------+---------------------+---------+
+| s_no | s_name | s_gender | s_birthday          | s_class |
++------+--------+----------+---------------------+---------+
+| 1810 | 张一   | 男       | 1990-09-01 00:00:00 | B1604   |
+| 1811 | 李二   | 男       | 1991-10-02 00:00:00 | B1605   |
+| 1812 | 孙钱   | 男       | 1992-11-03 00:00:00 | B1604   |
+| 1813 | 赵雯   | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1814 | 王立   | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1815 | 欧锦   | 女       | 1997-06-23 00:00:00 | B1602   |
+| 1816 | 王尼玛 | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1817 | 张全蛋 | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1818 | 赵铁柱 | 女       | 1997-06-23 00:00:00 | B1602   |
++------+--------+----------+---------------------+---------+
+9 rows in set (0.02 sec)
+</code></pre>
+
+<h4 id="2-查询student表中所有记录的s-name-s-gender-s-class列">2、查询Student表中所有记录的s_name,s_gender,s_class列</h4>
+
+<pre><code>mysql&gt; select s_name,s_gender,s_class from Student;
++--------+----------+---------+
+| s_name | s_gender | s_class |
++--------+----------+---------+
+| 张一   | 男       | B1604   |
+| 李二   | 男       | B1605   |
+| 孙钱   | 男       | B1604   |
+| 赵雯   | 女       | B1603   |
+| 王立   | 男       | B1602   |
+| 欧锦   | 女       | B1602   |
+| 王尼玛 | 女       | B1603   |
+| 张全蛋 | 男       | B1602   |
+| 赵铁柱 | 女       | B1602   |
++--------+----------+---------+
+9 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="3-查询教师所有的单位即不重复的depart列">3、查询教师所有的单位即不重复的depart列</h4>
+
+<pre><code>mysql&gt; select distinct t_depart from Teacher;
++------------+
+| t_depart   |
++------------+
+| 计算机系   |
+| 电子工程系 |
++------------+
+2 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="4-查询score表中成绩在60-80之间的所有记录">4、查询Score表中成绩在60-80之间的所有记录</h4>
+
+<pre><code>mysql&gt; select * from Score where s_degree between 60 and 80;
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1811 | 3-105 |       75 |
+| 1812 | 6-166 |       74 |
+| 1813 | 6-166 |       75 |
+| 1816 | 9-888 |       72 |
+| 1818 | 6-166 |       79 |
++------+-------+----------+
+5 rows in set (0.00 sec)
+
+或者：
+mysql&gt; select * from Score where s_degree&gt;60 and s_degree&lt;80;
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1811 | 3-105 |       75 |
+| 1812 | 6-166 |       74 |
+| 1813 | 6-166 |       75 |
+| 1816 | 9-888 |       72 |
+| 1818 | 6-166 |       79 |
++------+-------+----------+
+5 rows in set (0.01 sec)
+</code></pre>
+
+<h4 id="5-查询score表中成绩为85或86或88的记录">5、查询Score表中成绩为85或86或88的记录</h4>
+
+<pre><code>mysql&gt; select * from Score where s_degree in(85,86,88);
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1815 | 3-245 |       85 |
+| 1818 | 3-105 |       85 |
++------+-------+----------+
+2 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="6-查询student表中-b1602-班或性别为-女-的同学记录">6、查询Student表中“B1602”班或性别为“女”的同学记录</h4>
+
+<pre><code>mysql&gt; select * from Student where s_class = 'B1602' or s_gender = '女';
++------+--------+----------+---------------------+---------+
+| s_no | s_name | s_gender | s_birthday          | s_class |
++------+--------+----------+---------------------+---------+
+| 1813 | 赵雯   | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1814 | 王立   | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1815 | 欧锦   | 女       | 1997-06-23 00:00:00 | B1602   |
+| 1816 | 王尼玛 | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1817 | 张全蛋 | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1818 | 赵铁柱 | 女       | 1997-06-23 00:00:00 | B1602   |
++------+--------+----------+---------------------+---------+
+6 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="7-以class降序查询student表所有记录">7、以class降序查询Student表所有记录</h4>
+
+<pre><code>//降序
+ mysql&gt; select * from Student order by s_class desc;
++------+--------+----------+---------------------+---------+
+| s_no | s_name | s_gender | s_birthday          | s_class |
++------+--------+----------+---------------------+---------+
+| 1811 | 李二   | 男       | 1991-10-02 00:00:00 | B1605   |
+| 1810 | 张一   | 男       | 1990-09-01 00:00:00 | B1604   |
+| 1812 | 孙钱   | 男       | 1992-11-03 00:00:00 | B1604   |
+| 1813 | 赵雯   | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1816 | 王尼玛 | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1814 | 王立   | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1815 | 欧锦   | 女       | 1997-06-23 00:00:00 | B1602   |
+| 1817 | 张全蛋 | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1818 | 赵铁柱 | 女       | 1997-06-23 00:00:00 | B1602   |
++------+--------+----------+---------------------+---------+
+9 rows in set (0.02 sec)
+
+//升序，默认升序
+mysql&gt; select * from Student order by s_class asc;
++------+--------+----------+---------------------+---------+
+| s_no | s_name | s_gender | s_birthday          | s_class |
++------+--------+----------+---------------------+---------+
+| 1814 | 王立   | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1815 | 欧锦   | 女       | 1997-06-23 00:00:00 | B1602   |
+| 1817 | 张全蛋 | 男       | 1996-02-11 00:00:00 | B1602   |
+| 1818 | 赵铁柱 | 女       | 1997-06-23 00:00:00 | B1602   |
+| 1813 | 赵雯   | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1816 | 王尼玛 | 女       | 1994-12-05 00:00:00 | B1603   |
+| 1810 | 张一   | 男       | 1990-09-01 00:00:00 | B1604   |
+| 1812 | 孙钱   | 男       | 1992-11-03 00:00:00 | B1604   |
+| 1811 | 李二   | 男       | 1991-10-02 00:00:00 | B1605   |
++------+--------+----------+---------------------+---------+
+9 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="8-以c-no升序-degree降序查询score表的所有记录">8、以c_no升序、degree降序查询score表的所有记录</h4>
+
+<pre><code>mysql&gt; select * from Score order by c_no asc,s_degree desc;
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1818 | 3-105 |       85 |
+| 1811 | 3-105 |       75 |
+| 1810 | 3-105 |       56 |
+| 1814 | 3-245 |       93 |
+| 1815 | 3-245 |       85 |
+| 1812 | 3-245 |       84 |
+| 1818 | 6-166 |       79 |
+| 1813 | 6-166 |       75 |
+| 1812 | 6-166 |       74 |
+| 1810 | 9-888 |       97 |
+| 1817 | 9-888 |       89 |
+| 1816 | 9-888 |       72 |
++------+-------+----------+
+12 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="9-查询-b1602-班的学生人数">9、查询&rdquo;B1602&rdquo;班的学生人数</h4>
+
+<pre><code>mysql&gt; select count(*) from Student where s_class = 'B1602';
++----------+
+| count(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.01 sec)
+</code></pre>
+
+<h4 id="10-查询score表中的最高分的学生学号课程号-子查询或者排序">10、查询Score表中的最高分的学生学号课程号（子查询或者排序）</h4>
+
+<pre><code>mysql&gt; select s_no,c_no from Score where s_degree = (select max(s_degree) from Score);
++------+-------+
+| s_no | c_no  |
++------+-------+
+| 1810 | 9-888 |
++------+-------+
+1 row in set (0.01 sec)
+
+//排序的方法
+mysql&gt; select s_no,c_no, s_degree from Score order by s_degree desc limit 0,1 ;
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1810 | 9-888 |       97 |
++------+-------+----------+
+1 row in set (0.00 sec)
+//limit后面第一个数字表示从多少开始
+//第二个数字表示查询几条数据
+</code></pre>
+
+<h4 id="11-查询每门课的平均成绩">11、查询每门课的平均成绩</h4>
+
+<pre><code>//查询一门课的平均成绩
+mysql&gt; select avg(s_degree) from Score where c_no = '3-105';
++---------------+
+| avg(s_degree) |
++---------------+
+|       72.0000 |
++---------------+
+1 row in set (0.05 sec)
+
+//查询每门课的平均成绩
+mysql&gt; select avg(s_degree) from Score group by c_no;
++---------------+
+| avg(s_degree) |
++---------------+
+|       72.0000 |
+|       87.3333 |
+|       76.0000 |
+|       86.0000 |
++---------------+
+4 rows in set (0.05 sec)
+</code></pre>
+
+<h4 id="12-查询score表中至少有2名学生选修的并以3开头的课程的平均分数">12、查询Score表中至少有2名学生选修的并以3开头的课程的平均分数</h4>
+
+<pre><code>mysql&gt; select c_no, avg(s_degree),count(*) from Score group by c_no having count(s_no)&gt;=2 and c_no like '3%';
++-------+---------------+----------+
+| c_no  | avg(s_degree) | count(*) |
++-------+---------------+----------+
+| 3-105 |       72.0000 |        3 |
+| 3-245 |       87.3333 |        3 |
++-------+---------------+----------+
+2 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="13-查询分数大于70-小于90的s-no列">13、查询分数大于70，小于90的s_no列</h4>
+
+<pre><code> mysql&gt; select s_no,s_degree from Score where s_degree&gt;70 and s_degree&lt;90;
++------+----------+
+| s_no | s_degree |
++------+----------+
+| 1811 |       75 |
+| 1812 |       84 |
+| 1812 |       74 |
+| 1813 |       75 |
+| 1815 |       85 |
+| 1816 |       72 |
+| 1817 |       89 |
+| 1818 |       85 |
+| 1818 |       79 |
++------+----------+
+9 rows in set (0.00 sec)
+
+//或者：
+mysql&gt; select s_no,s_degree from Score where s_degree between 70 and 90;
++------+----------+
+| s_no | s_degree |
++------+----------+
+| 1811 |       75 |
+| 1812 |       84 |
+| 1812 |       74 |
+| 1813 |       75 |
+| 1815 |       85 |
+| 1816 |       72 |
+| 1817 |       89 |
+| 1818 |       85 |
+| 1818 |       79 |
++------+----------+
+9 rows in set (0.00 sec)
+</code></pre>
+
+<p>#### 14、查询所有学生的s_name、c_no、和s_degree列</p>
+
+<pre><code> //学生表中的s_no,s_name
+mysql&gt; select s_no,s_name from Student;
++------+--------+
+| s_no | s_name |
++------+--------+
+| 1810 | 张一   |
+| 1811 | 李二   |
+| 1812 | 孙钱   |
+| 1813 | 赵雯   |
+| 1814 | 王立   |
+| 1815 | 欧锦   |
+| 1816 | 王尼玛 |
+| 1817 | 张全蛋 |
+| 1818 | 赵铁柱 |
++------+--------+
+9 rows in set (0.00 sec)
+
+//成绩表中的s_no,c_no和s_degree
+mysql&gt; select s_no,c_no,s_degree from Score;
++------+-------+----------+
+| s_no | c_no  | s_degree |
++------+-------+----------+
+| 1810 | 3-105 |       56 |
+| 1810 | 9-888 |       97 |
+| 1811 | 3-105 |       75 |
+| 1812 | 3-245 |       84 |
+| 1812 | 6-166 |       74 |
+| 1813 | 6-166 |       75 |
+| 1814 | 3-245 |       93 |
+| 1815 | 3-245 |       85 |
+| 1816 | 9-888 |       72 |
+| 1817 | 9-888 |       89 |
+| 1818 | 3-105 |       85 |
+| 1818 | 6-166 |       79 |
++------+-------+----------+
+12 rows in set (0.00 sec)
+
+//合并两个表就是通过相同的s_no
+mysql&gt; select s_name, c_no, s_degree from Student,Score where Student.s_no = Score.s_no;
++--------+-------+----------+
+| s_name | c_no  | s_degree |
++--------+-------+----------+
+| 张一   | 3-105 |       56 |
+| 张一   | 9-888 |       97 |
+| 李二   | 3-105 |       75 |
+| 孙钱   | 3-245 |       84 |
+| 孙钱   | 6-166 |       74 |
+| 赵雯   | 6-166 |       75 |
+| 王立   | 3-245 |       93 |
+| 欧锦   | 3-245 |       85 |
+| 王尼玛 | 9-888 |       72 |
+| 张全蛋 | 9-888 |       89 |
+| 赵铁柱 | 3-105 |       85 |
+| 赵铁柱 | 6-166 |       79 |
++--------+-------+----------+
+12 rows in set (0.00 sec)
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://yato534.github.io/tags/mysql/">mysql</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/09/%E5%89%91%E6%8C%87offer-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E9%93%BE%E8%A1%A8/" data-tooltip="剑指offer-字符串和链表">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 YaTo. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://yato534.github.io/2019/09/%E5%89%91%E6%8C%87offer-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E9%93%BE%E8%A1%A8/" data-tooltip="剑指offer-字符串和链表">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://yato534.github.io/images/yato.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">YaTo</h4>
+    
+      <div id="about-card-bio">Is life always this hard? Or is it just when you&rsquo;re a kid?</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        南京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://yato534.github.io/images/view1.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://yato534.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://yato534.github.io/js/clicklove.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

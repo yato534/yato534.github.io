@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 逛街晚餐 薄雾客栈</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Sep 2019 10:41:21 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 22:09:32 +0800</lastBuildDate>
     
 	<atom:link href="https://yato534.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql</title>
+      <link>https://yato534.github.io/tags/mysql/</link>
+      <pubDate>Fri, 11 Oct 2019 22:09:32 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>字符串</title>

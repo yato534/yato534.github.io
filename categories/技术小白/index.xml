@@ -6,10 +6,19 @@
     <description>Recent content in 技术小白 on 逛街晚餐 薄雾客栈</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Sep 2019 10:41:21 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 22:09:32 +0800</lastBuildDate>
     
 	<atom:link href="https://yato534.github.io/categories/%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL初体验</title>
+      <link>https://yato534.github.io/2019/10/mysql%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Fri, 11 Oct 2019 22:09:32 +0800</pubDate>
+      
+      <guid>https://yato534.github.io/2019/10/mysql%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
+      <description>&lt;p&gt;　　好久没有更新了，因为忙于校招同时也是因为自己的懒惰，废话不多说，这边文章如题目所言就是把自己从重新下载安装MySQL数据库到跟着视频学习的记录，有点笔记风格，但也全是自己手打整理。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>剑指offer-字符串和链表</title>
